@@ -1,1 +1,3 @@
-export * from './hook'
+import useRefs from './hook'
+
+export default useRefs

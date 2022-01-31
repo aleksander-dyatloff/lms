@@ -1,0 +1,76 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Button component should match to snapshot 1`] = `
+.c0 {
+  padding: 0;
+  margin: 0;
+  font: inherit;
+  -webkit-letter-spacing: inherit;
+  -moz-letter-spacing: inherit;
+  -ms-letter-spacing: inherit;
+  letter-spacing: inherit;
+  list-style: none;
+  color: inherit;
+  background-color: inherit;
+  border: none;
+  border-radius: 0;
+  width: 100%;
+  text-align: inherit;
+  -webkit-text-decoration: inherit;
+  text-decoration: inherit;
+  cursor: inherit;
+  outline: none;
+  caret-color: inherit;
+}
+
+.c1 {
+  --mainColor: #8e24aa;
+  --contrastColor: #ffffff;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  min-height: 36px;
+  cursor: pointer;
+  border-radius: 12px;
+  padding: 4px 12px;
+  -webkit-transition-property: background-color,border-color,color;
+  transition-property: background-color,border-color,color;
+  -webkit-transition-duration: 160ms;
+  transition-duration: 160ms;
+}
+
+.c1:not([disabled]):hover {
+  --mainColor: #6d1785;
+}
+
+.c1.filled {
+  background-color: var(--mainColor);
+  color: var(--contrastColor);
+}
+
+.c1.outlined {
+  color: var(--mainColor);
+  border: 2px solid var(--mainColor);
+}
+
+.c1.text {
+  color: var(--mainColor);
+}
+
+<div>
+  <button
+    class="c0 c1  filled"
+  >
+    Click
+  </button>
+</div>
+`;

@@ -1,11 +1,10 @@
 import useRefs from '@hooks/useRefs'
-import { ForwardedRef, forwardRef, ReactElement, useEffect, useRef } from 'react'
+import { forwardRef, useEffect, useRef } from 'react'
 
-import { Wrapper } from './styles'
-import { ElementComponent } from './types'
+import Wrapper from './styles'
+import ElementComponent from './types'
 
-const Element = forwardRef<HTMLElement, ElementComponent.Props>(({
-  as = 'div',
+const Element = forwardRef<HTMLElement | null, ElementComponent.Props>(({
   onClickOutside,
   onFocus,
   onClick,
@@ -34,10 +33,9 @@ const Element = forwardRef<HTMLElement, ElementComponent.Props>(({
   return (
     <Wrapper
       tabIndex={tabIndex}
-...restProps}
+      {...restProps}
     />
   )
-// eslint-disable-next-line max-len
 })
 
 export default Element

@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-export const Wrapper = styled.div`
+const Wrapper = styled.div`
   // Reset styles
   padding: 0;
   margin: 0;
@@ -18,3 +18,5 @@ export const Wrapper = styled.div`
   outline: none;
   caret-color: inherit;
 `
+
+export default Wrapper

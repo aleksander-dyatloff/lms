@@ -1,7 +1,7 @@
 import combineClasses from '@utils/combineClasses'
 import { FC } from 'react'
 
-import { Wrapper } from './styles'
+import Wrapper from './styles'
 import TextComponent from './types'
 
 const Text: FC<TextComponent.Props> = ({

@@ -17,9 +17,9 @@ const Element = forwardRef<HTMLElement | null, ElementComponent.Props>(({
   const ref = useRefs(forwardedRef, innerRef)
 
   useEffect(() => {
-    const handleOutsideClick: EventListener = (event) => {
-      if (ref.current && !innerRef?.current?.contains(event.target as Node)) {
-        onClickOutside?.(event)
+    function handleOutsideClick(this: Document, ev: Event) {
+      if (ref.current && !innerRef?.current?.contains(ev.target as Node)) {
+        onClickOutside?.call(document, ev)
       }
     }
 

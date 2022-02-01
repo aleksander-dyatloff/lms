@@ -25,4 +25,4 @@ jobs:
     - name: Build
       run: |
         yarn install
-        eslint . --ext .js,.jsx,.ts,.tsx
+        yarn run eslint . --ext .js,.jsx,.ts,.tsx

@@ -1,9 +1,9 @@
-import { HTMLAttributes, MouseEventHandler } from 'react'
+import { HTMLAttributes } from 'react'
 
 namespace ElementComponent {
   // eslint-disable-next-line max-len
   export interface Props extends HTMLAttributes<HTMLElement> {
-    readonly onClickOutside?: MouseEventHandler<HTMLElement>
+    readonly onClickOutside?: (this: Document, ev: Event) => void
   }
 }
 

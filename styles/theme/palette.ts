@@ -4,11 +4,7 @@ export interface ColorPalette {
   contrast: string
 }
 
-export interface Palette {
-  [K: string]: ColorPalette
-}
-
-export const palette: Palette = {
+export const palette = {
   primary: {
     main: '#8e24aa',
     mainDarken: '#6d1785',

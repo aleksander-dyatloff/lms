@@ -6,6 +6,7 @@ interface User {
   readonly id: ID
   name: string
   surname: string
+  picture?: string
   role: keyof typeof Roles
   gender: keyof typeof Genders
 }

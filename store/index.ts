@@ -1,6 +1,8 @@
 import { Action, configureStore, ThunkAction } from '@reduxjs/toolkit'
 
-const store = configureStore({ reducer: {} })
+import authorizedUser from './authorizedUser'
+
+const store = configureStore({ reducer: { authorizedUser } })
 
 export type AppDispatch = typeof store.dispatch
 

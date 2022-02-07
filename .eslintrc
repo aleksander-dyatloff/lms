@@ -60,12 +60,11 @@
     "no-underscore-dangle": "off",
     "react/jsx-pascal-case": "off",
     "@typescript-eslint/restrict-template-expressions": "off",
-    "@typescript-eslint/ban-ts-comment": "off"
+    "@typescript-eslint/ban-ts-comment": "off",
+    "@typescript-eslint/no-empty-interface": "off",
+    "react-hooks/rules-of-hooks": "off"
   },
   "parserOptions": {
     "project": "./tsconfig.json"
-  },
-  "ignorePatterns": [
-    "apiFake/**/*.js"
-  ]
+  }
 }

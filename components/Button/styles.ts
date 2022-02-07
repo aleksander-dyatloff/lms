@@ -4,8 +4,12 @@ import styled from 'styled-components'
 import ButtonComponent from './types'
 
 const Wrapper = styled(Element)<ButtonComponent.WrapperProps>`
-  --mainColor: ${({ palette }) => palette.main};
-  --contrastColor: ${({ palette }) => palette.contrast};
+  --mainColor: ${({
+    theme, palette,
+  }) => palette?.main ?? theme.palette.primary.main};
+  --contrastColor: ${({
+    theme, palette,
+  }) => palette?.contrast ?? theme.palette.primary.contrast};
 
   display: flex;
   align-items: center;
@@ -18,7 +22,9 @@ const Wrapper = styled(Element)<ButtonComponent.WrapperProps>`
   transition-duration: 160ms;
 
   &:not([disabled]):hover {
-    --mainColor: ${({ palette }) => palette.mainDarken};
+    --mainColor: ${({
+    theme, palette,
+  }) => palette?.mainDarken ?? theme.palette.primary.mainDarken};
   }
 
   &.filled {

@@ -27,6 +27,10 @@ const GlobalStyles = createGlobalStyle`
     outline: none;
     caret-color: inherit;
   }
+
+  .offTransition {
+    transition-duration: 0ms !important;
+  }
 `
 
 export default GlobalStyles

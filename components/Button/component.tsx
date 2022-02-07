@@ -10,15 +10,12 @@ const Button: FC<ButtonComponent.Props> = ({
   className,
   ...restProps
 }) => {
-  const theme = useTheme()
-
   const wrapperClasses = combineClasses(variant, className)
 
   return (
     <Wrapper
       as='button'
       className={wrapperClasses}
-      palette={theme.palette.primary}
       {...restProps}
     />
   )

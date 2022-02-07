@@ -1,4 +1,5 @@
 import combineClasses from '@utils/combineClasses'
+import isBrowser from '@utils/isBrowser'
 import { MouseEventHandler, useContext, useEffect, useRef, useState } from 'react'
 
 import TabSizingContext from './contexts'
@@ -32,7 +33,7 @@ const TabList: TabListComponent.MainComponent = ({
 }
 
 TabList.Item = ({
-  name,
+  name = '',
   value,
   selectedValue,
   onChange,
@@ -58,7 +59,7 @@ TabList.Item = ({
   }
 
   useEffect(() => {
-    if (selectedValue === value) {
+    if (isBrowser() && selectedValue === value) {
       setTabSizing(getTabItemSize())
     }
   }, [])

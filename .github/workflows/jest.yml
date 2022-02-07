@@ -1,4 +1,4 @@
-name: Application code style
+name: Application testing
 
 on:
   push:
@@ -25,4 +25,4 @@ jobs:
     - name: Build
       run: |
         yarn install
-        yarn run eslint . --ext .js,.jsx,.ts,.tsx
+        yarn test

@@ -1,3 +1,4 @@
+import Header from '@components/Header'
 import store from '@store/index'
 import GlobalStyles from '@styles/global'
 import theme from '@styles/theme'
@@ -13,6 +14,7 @@ function MyApp({
     <ThemeProvider theme={theme}>
       <Provider store={store}>
         <GlobalStyles />
+        <Header />
         <Component {...pageProps} />
       </Provider>
     </ThemeProvider>

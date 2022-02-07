@@ -34,6 +34,11 @@ const Wrapper = styled.div`
   &.p {
     line-height: 1.4;
   }
+
+  &.sub {
+    font-size: 0.8rem;
+    opacity: 0.7;
+  }
 `
 
 export default Wrapper

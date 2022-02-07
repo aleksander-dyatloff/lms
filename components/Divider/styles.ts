@@ -2,16 +2,18 @@ import Element from '@components/Element/styles'
 import styled from 'styled-components'
 
 const Wrapper = styled(Element)`
-  background-color: gray;
+  background-color: ${({
+    color, theme,
+  }) => color ?? theme.palette.primary.contrast};
 
   &.vertical {
-    width: 1px;
+    width: 2px;
     height: 100px;
   }
 
   &.horizontal {
     width: 100%;
-    height: 1px;
+    height: 2px;
   }
 `
 

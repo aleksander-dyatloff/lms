@@ -6,6 +6,7 @@ import Wrapper from './styles'
 import TabListComponent from './types'
 
 const TabList: TabListComponent.MainComponent = ({
+  as = 'div',
   children,
   ...restProps
 }) => {
@@ -13,7 +14,10 @@ const TabList: TabListComponent.MainComponent = ({
 
   return (
     <TabSizingContext.Provider value={setTabSizing}>
-      <Wrapper {...restProps}>
+      <Wrapper
+        as={as}
+        {...restProps}
+      >
         <div
           className='indicator'
           style={{

@@ -10,7 +10,7 @@ const Text: FC<TextComponent.Props> = ({
   variant = as,
   ...restProps
 }) => {
-  const wrapperClasses = combineClasses(variant, className)
+  const wrapperClasses = combineClasses(variant, 'reset', className)
 
   return (
     <Wrapper

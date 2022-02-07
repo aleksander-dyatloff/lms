@@ -1,7 +1,10 @@
-export const index = () => `export * from './component'`
+export const index = (name) => `import ${name} from './component'
+
+export default ${name}
+`
 
 export const component = (name) => `import { FC } from 'react'
-import { Wrapper } from './styles'
+import Wrapper from './styles'
 import ${name}Component from './types'
 
 const ${name}: FC<${name}Component.Props> = ({ ...restProps }) => (
@@ -20,8 +23,8 @@ import ${name} from './component'
 export default memo(${name})
 `
 
-export const types = (name) => `export namespace ${name}Component {
-  interface WrapperProps {
+export const types = (name) => `namespace ${name}Component {
+  export interface WrapperProps {
   }
 
   export interface Props {
@@ -33,10 +36,11 @@ export default ${name}Component
 
 export const styles = (name) => `import styled from 'styled-components'
 
-import { ${name}Component } from './types'
+import ${name}Component from './types'
 
-export const Wrapper = styled.div<${name}Component.WrapperProps>\`
+const Wrapper = styled.div<${name}Component.WrapperProps>\`
 \`
+export default Wrapper
 `
 
 export const componentTest = (name) => `import 'jest-styled-components'

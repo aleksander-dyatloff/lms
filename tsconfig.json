@@ -42,6 +42,9 @@
       ],
       "@interfaces/*": [
         "./interfaces/*"
+      ],
+      "@constants/*": [
+        "./constants/*"
       ]
     },
     "incremental": true

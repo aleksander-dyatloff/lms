@@ -2,6 +2,7 @@ import Avatar from '@components/Avatar'
 import TabList from '@components/TabList'
 import TextField from '@components/TextField'
 import ChangeHandler from '@interfaces/ChangeHandler'
+import { useRouter } from 'next/router'
 import { ChangeEventHandler, FC, useState } from 'react'
 import { useTheme } from 'styled-components'
 
@@ -10,9 +11,9 @@ import HeaderComponent from './types'
 
 const Header: FC<HeaderComponent.Props> = ({ ...restProps }) => {
   const theme = useTheme()
-
-  const [tab, setTab] = useState('home')
-
+  const router = useRouter()
+  const routerSplitPathname = router.pathname.split('/')
+  const [tab, setTab] = useState(routerSplitPathname[routerSplitPathname.length - 1] ?? '')
   const [search, setSearch] = useState('')
 
   const handleSearchChange: ChangeEventHandler<HTMLInputElement> = (e) => {
@@ -21,6 +22,7 @@ const Header: FC<HeaderComponent.Props> = ({ ...restProps }) => {
 
   const handleChange: ChangeHandler = ({ value }) => {
     setTab(value)
+    void router.push(`/${value}`)
   }
 
   return (
@@ -34,17 +36,18 @@ const Header: FC<HeaderComponent.Props> = ({ ...restProps }) => {
         value={search}
         onChange={handleSearchChange}
       />
-      <TabList className='navigation'>
+      <TabList
+        as='nav'
+        className='navigation'
+      >
         <TabList.Item
-          name='some'
           selectedValue={tab}
-          value='home'
+          value=''
           onChange={handleChange}
         >
           Home
         </TabList.Item>
         <TabList.Item
-          name='some'
           selectedValue={tab}
           value='diary'
           onChange={handleChange}
@@ -52,7 +55,6 @@ const Header: FC<HeaderComponent.Props> = ({ ...restProps }) => {
           Diary
         </TabList.Item>
         <TabList.Item
-          name='some'
           selectedValue={tab}
           value='school'
           onChange={handleChange}

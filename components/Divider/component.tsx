@@ -6,6 +6,7 @@ import DividerComponent from './types'
 
 const Divider: FC<DividerComponent.Props> = ({
   dir = 'horizontal',
+  color,
   className,
   ...restProps
 }) => {

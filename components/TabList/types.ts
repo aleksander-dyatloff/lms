@@ -3,6 +3,7 @@ import { FC } from 'react'
 
 namespace TabListComponent {
   export interface Props {
+    as?: keyof HTMLElementTagNameMap
     className?: string
   }
 
@@ -14,7 +15,7 @@ namespace TabListComponent {
   export interface ItemProps {
     value: string
     selectedValue: string
-    name: string
+    name?: string
     onChange: ChangeHandler
   }
 

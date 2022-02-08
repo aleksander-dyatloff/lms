@@ -1,43 +1,7 @@
-import Align from '@interfaces/Align'
-import styled, { css } from 'styled-components'
+import align from '@styles/mixins/align'
+import styled from 'styled-components'
 
 import ElementComponent from './types'
-
-const getAlignStyles = (align?: Align) => {
-  switch (align) {
-    case Align.Top:
-      return css`margin-bottom: auto;`
-
-    case Align.Right:
-      return css`margin-left: auto;`
-
-    case Align.Bottom:
-      return css`margin-top: auto;`
-
-    case Align.Left:
-      return css`margin-right: auto;`
-
-    case Align.Horizontal:
-      return css`
-        margin-left: auto;
-        margin-right: auto;
-      `
-
-    case Align.Vertical:
-      return css`
-        margin-top: auto;
-        margin-bottom: auto;
-      `
-
-    case Align.Center:
-      return css`
-        margin: auto;
-      `
-
-    default:
-      return null
-  }
-}
 
 const Wrapper = styled.div<ElementComponent.WrapperProps>`
   // Reset styles
@@ -47,7 +11,7 @@ const Wrapper = styled.div<ElementComponent.WrapperProps>`
   letter-spacing: inherit;
   list-style: none;
   color: inherit;
-  background-color: inherit;
+  background-color: transparent;
   border: none;
   border-radius: 0;
   text-align: inherit;
@@ -56,7 +20,7 @@ const Wrapper = styled.div<ElementComponent.WrapperProps>`
   outline: none;
   caret-color: inherit;
 
-  ${({ align }) => getAlignStyles(align)}
+  ${({ align: alignProp }) => align(alignProp)}
 `
 
 export default Wrapper

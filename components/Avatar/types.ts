@@ -1,4 +1,5 @@
 import Align from '@interfaces/Align'
+import { FC } from 'react'
 
 import { AvatarSizes } from './constants'
 
@@ -11,7 +12,11 @@ export namespace AvatarComponent {
     align?: Align
     src?: string
     alt: string
-    size: keyof typeof AvatarSizes
+    size?: number
+  }
+
+  export interface MainComponent extends FC<Props> {
+    size?: typeof AvatarSizes
   }
 }
 

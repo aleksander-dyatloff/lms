@@ -7,7 +7,12 @@ import Avatar from './component'
 
 describe('Avatar component', () => {
   test('should match to snapshot', () => {
-    const { container } = render(<Avatar />)
+    const { container } = render(
+      <Avatar
+        src='http://some'
+        alt='Some alt'
+      />,
+    )
 
     expect(container).toMatchSnapshot()
   })
@@ -17,10 +22,13 @@ describe('Avatar component', () => {
       <Profiler
         id='Avatar'
         onRender={(_, __, renderDuration) => {
-          expect(renderDuration).toBeLessThanOrEqual(1.5)
+          expect(renderDuration).toBeLessThanOrEqual(5)
         }}
       >
-        <Avatar />
+        <Avatar
+          src='http://some'
+          alt='Some alt'
+        />
       </Profiler>,
     )
   })

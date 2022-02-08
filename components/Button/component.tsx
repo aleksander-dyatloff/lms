@@ -1,15 +1,14 @@
 import combineClasses from '@utils/combineClasses'
-import { FC } from 'react'
 
 import Wrapper from './styles'
 import ButtonComponent from './types'
 
-const Button: FC<ButtonComponent.Props> = ({
-  variant = 'filled',
+const Button: ButtonComponent.MainComponent = ({
+  variant = ButtonComponent.Variant.Filled,
   className,
   ...restProps
 }) => {
-  const wrapperClasses = combineClasses(variant, className)
+  const wrapperClasses = combineClasses(String(variant), className)
 
   return (
     <Wrapper
@@ -19,5 +18,7 @@ const Button: FC<ButtonComponent.Props> = ({
     />
   )
 }
+
+Button.variants = ButtonComponent.Variant
 
 export default Button

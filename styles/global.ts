@@ -17,7 +17,7 @@ const GlobalStyles = createGlobalStyle`
     letter-spacing: inherit;
     list-style: none;
     color: inherit;
-    background-color: inherit;
+    background-color: transparent;
     border: none;
     border-radius: 0;
     width: 100%;

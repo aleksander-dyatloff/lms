@@ -22,8 +22,8 @@ const Wrapper = styled(Element)`
 
   .indicator {
     position: absolute;
-    height: 3px;
-    border-radius: 3px 3px 0 0;
+    height: 4px;
+    border-radius: 4px 4px 0 0;
     background-color: white;
     bottom: 0;
     left: 0;

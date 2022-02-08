@@ -27,17 +27,17 @@ const Wrapper = styled(Element)<ButtonComponent.WrapperProps>`
   }) => palette?.mainDarken ?? theme.palette.primary.mainDarken};
   }
 
-  &.filled {
+  &.${ButtonComponent.Variant.Filled} {
     background-color: var(--mainColor);
     color: var(--contrastColor);
   }
 
-  &.outlined {
+  &.${ButtonComponent.Variant.Outlined} {
     color: var(--mainColor);
     border: 2px solid var(--mainColor);
   }
 
-  &.text {
+  &.${ButtonComponent.Variant.Text} {
     color: var(--mainColor);  
   }
 `

@@ -73,7 +73,6 @@ const Header: FC<HeaderComponent.Props> = ({ ...restProps }) => {
         <Grid.Column size={2}>
           <Avatar
             align={Align.Right}
-            size='sm'
             alt='Avatar'
           />
         </Grid.Column>

@@ -1,25 +1,23 @@
 import Image from 'next/image'
-import { FC } from 'react'
-import { useTheme } from 'styled-components'
 
 import { AvatarSizes } from './constants'
 import Wrapper from './styles'
 import AvatarComponent from './types'
 
-const Avatar: FC<AvatarComponent.Props> = ({
+const Avatar: AvatarComponent.MainComponent = ({
   alt,
   src,
-  size = 'sm',
+  size = AvatarSizes.sm,
   ...restProps
 }) => (
   <Wrapper
-    size={AvatarSizes[size]}
+    size={size}
     {...restProps}
   >
     {src ? (
       <Image
-        width={AvatarSizes[size]}
-        height={AvatarSizes[size]}
+        width={size}
+        height={size}
         src={src}
         alt={alt}
       />
@@ -28,5 +26,7 @@ const Avatar: FC<AvatarComponent.Props> = ({
     )}
   </Wrapper>
 )
+
+Avatar.size = AvatarSizes
 
 export default Avatar

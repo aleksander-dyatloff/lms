@@ -1,8 +1,9 @@
-import styled, { css } from 'styled-components'
+import Element from '@components/Element/styles'
+import styled from 'styled-components'
 
 import TextFieldComponent from './types'
 
-const Wrapper = styled.div<TextFieldComponent.WrapperProps>`
+const Wrapper = styled(Element)<TextFieldComponent.WrapperProps>`
   --mainColor: ${({ palette }) => palette.main};
   --contrastColor: ${({ palette }) => palette.contrast};
 

@@ -1,6 +1,7 @@
+import Element from '@components/Element/styles'
 import styled from 'styled-components'
 
-const Wrapper = styled.div`
+const Wrapper = styled(Element)`
   position: relative;
   display: flex;
   justify-content: space-between;

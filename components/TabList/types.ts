@@ -1,8 +1,10 @@
+import Align from '@interfaces/Align'
 import ChangeHandler from '@interfaces/ChangeHandler'
 import { FC } from 'react'
 
 namespace TabListComponent {
   export interface Props {
+    align?: Align
     as?: keyof HTMLElementTagNameMap
     className?: string
   }

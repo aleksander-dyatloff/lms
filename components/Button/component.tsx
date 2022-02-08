@@ -1,6 +1,5 @@
 import combineClasses from '@utils/combineClasses'
 import { FC } from 'react'
-import { useTheme } from 'styled-components'
 
 import Wrapper from './styles'
 import ButtonComponent from './types'

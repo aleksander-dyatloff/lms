@@ -17,7 +17,7 @@ describe('TabList component', () => {
       <Profiler
         id='TabList'
         onRender={(_, __, renderDuration) => {
-          expect(renderDuration).toBeLessThanOrEqual(1.5)
+          expect(renderDuration).toBeLessThanOrEqual(3)
         }}
       >
         <TabList />

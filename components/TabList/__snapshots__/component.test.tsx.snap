@@ -1,9 +1,61 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`TabList component should match to snapshot 1`] = `
+.c0 {
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-height: 32px;
+}
+
+.c0 .item {
+  cursor: pointer;
+  padding: 0 NaNpx;
+  -webkit-transition-property: opacity;
+  transition-property: opacity;
+  -webkit-transition-duration: 160ms;
+  transition-duration: 160ms;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+}
+
+.c0 .item:not(.active) {
+  opacity: 0.7;
+}
+
+.c0 .indicator {
+  position: absolute;
+  height: 3px;
+  border-radius: 3px 3px 0 0;
+  background-color: white;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  -webkit-transition-property: width,left;
+  transition-property: width,left;
+  -webkit-transition-duration: 160ms;
+  transition-duration: 160ms;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+}
+
 <div>
   <div
-    class=""
-  />
+    class="c0"
+  >
+    <div
+      class="indicator"
+    />
+  </div>
 </div>
 `;

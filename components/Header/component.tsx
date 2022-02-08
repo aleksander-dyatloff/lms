@@ -1,6 +1,8 @@
 import Avatar from '@components/Avatar'
+import Grid from '@components/Grid'
 import TabList from '@components/TabList'
 import TextField from '@components/TextField'
+import Align from '@interfaces/Align'
 import ChangeHandler from '@interfaces/ChangeHandler'
 import { useRouter } from 'next/router'
 import { ChangeEventHandler, FC, useState } from 'react'
@@ -30,42 +32,52 @@ const Header: FC<HeaderComponent.Props> = ({ ...restProps }) => {
       palette={theme.palette.primary}
       {...restProps}
     >
-      <TextField
-        name='search'
-        placeholder='Search info'
-        value={search}
-        onChange={handleSearchChange}
-      />
-      <TabList
-        as='nav'
-        className='navigation'
-      >
-        <TabList.Item
-          selectedValue={tab}
-          value=''
-          onChange={handleChange}
-        >
-          Home
-        </TabList.Item>
-        <TabList.Item
-          selectedValue={tab}
-          value='diary'
-          onChange={handleChange}
-        >
-          Diary
-        </TabList.Item>
-        <TabList.Item
-          selectedValue={tab}
-          value='school'
-          onChange={handleChange}
-        >
-          School
-        </TabList.Item>
-      </TabList>
-      <Avatar
-        size='sm'
-        alt='Avatar'
-      />
+      <Grid>
+        <Grid.Column size={2}>
+          <TextField
+            name='search'
+            placeholder='Search info'
+            value={search}
+            onChange={handleSearchChange}
+          />
+        </Grid.Column>
+        <Grid.Column>
+          <TabList
+            align={Align.Horizontal}
+            as='nav'
+            className='navigation'
+          >
+            <TabList.Item
+              selectedValue={tab}
+              value=''
+              onChange={handleChange}
+            >
+              Home
+            </TabList.Item>
+            <TabList.Item
+              selectedValue={tab}
+              value='diary'
+              onChange={handleChange}
+            >
+              Diary
+            </TabList.Item>
+            <TabList.Item
+              selectedValue={tab}
+              value='school'
+              onChange={handleChange}
+            >
+              School
+            </TabList.Item>
+          </TabList>
+        </Grid.Column>
+        <Grid.Column size={2}>
+          <Avatar
+            align={Align.Right}
+            size='sm'
+            alt='Avatar'
+          />
+        </Grid.Column>
+      </Grid>
     </Wrapper>
   )
 }

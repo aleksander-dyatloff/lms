@@ -35,9 +35,14 @@ exports[`Text component should match to snapshot 1`] = `
   line-height: 1.4;
 }
 
+.c0.sub {
+  font-size: 0.8rem;
+  opacity: 0.7;
+}
+
 <div>
   <span
-    class="c0  span"
+    class="c0  span reset"
   />
 </div>
 `;

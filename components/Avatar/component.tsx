@@ -11,27 +11,22 @@ const Avatar: FC<AvatarComponent.Props> = ({
   src,
   size = 'sm',
   ...restProps
-}) => {
-  const theme = useTheme()
-
-  return (
-    <Wrapper
-      theme={theme}
-      size={AvatarSizes[size]}
-      {...restProps}
-    >
-      {src ? (
-        <Image
-          width={AvatarSizes[size]}
-          height={AvatarSizes[size]}
-          src={src}
-          alt={alt}
-        />
-      ) : (
-        <span>{alt[0]}</span>
-      )}
-    </Wrapper>
-  )
-}
+}) => (
+  <Wrapper
+    size={AvatarSizes[size]}
+    {...restProps}
+  >
+    {src ? (
+      <Image
+        width={AvatarSizes[size]}
+        height={AvatarSizes[size]}
+        src={src}
+        alt={alt}
+      />
+    ) : (
+      <span>{alt[0]}</span>
+    )}
+  </Wrapper>
+)
 
 export default Avatar

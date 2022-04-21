@@ -1,7 +1,7 @@
 enum Roles {
-  Teacher,
+  User,
   Cadet,
-  Admin,
+  Teacher,
 }
 
 export default Roles

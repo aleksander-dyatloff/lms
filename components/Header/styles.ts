@@ -21,5 +21,25 @@ const Wrapper = styled.header<HeaderComponent.WrapperProps>`
   .navigation {
     height: 100%;
   }
+
+  .searchWrapper {
+    display: flex;
+    align-items: center;
+  }
+
+  .navigationWrapper {
+    display: flex;
+  }
+
+  .userInfo {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
+
+  .userTitle {
+    margin-right: 16px;
+  }
 `
 export default Wrapper

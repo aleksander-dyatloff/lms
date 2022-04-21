@@ -3,11 +3,12 @@ import ID from './ID'
 import Roles from './Roles'
 
 interface User {
-  readonly id: ID
+  readonly _id: ID
+  readonly googleId: ID
   name: string
   picture?: string
-  role: keyof typeof Roles
-  gender?: keyof typeof Genders
+  role: Roles
+  gender?: Genders
 }
 
 export default User

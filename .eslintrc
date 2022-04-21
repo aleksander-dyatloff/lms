@@ -41,9 +41,10 @@
     "simple-import-sort/imports": "error",
     "simple-import-sort/exports": "error",
     "jsx-a11y/anchor-is-valid": 0,
-    "no-unused-vars": ["warn", { "argsIgnorePattern": "^_" }],
+    "no-unused-vars": ["error", { "argsIgnorePattern": "^_" }],
     "@typescript-eslint/no-unused-vars": ["warn", { "argsIgnorePattern": "^_" }],
     "no-void": 0,
+    "@typescript-eslint/no-empty-interface": "off",
     "@typescript-eslint/no-namespace": "off",
     "import/no-named-as-default": "off",
     "import/no-named-as-default-member": "off",
@@ -61,8 +62,8 @@
     "react/jsx-pascal-case": "off",
     "@typescript-eslint/restrict-template-expressions": "off",
     "@typescript-eslint/ban-ts-comment": "off",
-    "@typescript-eslint/no-empty-interface": "off",
-    "react-hooks/rules-of-hooks": "off"
+    "react-hooks/rules-of-hooks": "off",
+    "consistent-return": "off"
   },
   "parserOptions": {
     "project": "./tsconfig.json"

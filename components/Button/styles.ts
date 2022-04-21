@@ -1,11 +1,16 @@
 import Element from '@components/Element/styles'
 import styled from 'styled-components'
 
+import { variantClasses } from './constants'
 import ButtonComponent from './types'
 
 const Wrapper = styled(Element)<ButtonComponent.WrapperProps>`
-  --mainColor: ${({ palette }) => palette.main};
-  --contrastColor: ${({ palette }) => palette.contrast};
+  --mainColor: ${({
+    theme, palette,
+  }) => palette?.main ?? theme.palette.primary.main};
+  --contrastColor: ${({
+    theme, palette,
+  }) => palette?.contrast ?? theme.palette.primary.contrast};
 
   display: flex;
   align-items: center;
@@ -18,20 +23,22 @@ const Wrapper = styled(Element)<ButtonComponent.WrapperProps>`
   transition-duration: 160ms;
 
   &:not([disabled]):hover {
-    --mainColor: ${({ palette }) => palette.mainDarken};
+    --mainColor: ${({
+    theme, palette,
+  }) => palette?.mainDarken ?? theme.palette.primary.mainDarken};
   }
 
-  &.filled {
+  &.${variantClasses[ButtonComponent.Variant.Filled]} {
     background-color: var(--mainColor);
     color: var(--contrastColor);
   }
 
-  &.outlined {
+  &.${variantClasses[ButtonComponent.Variant.Outlined]} {
     color: var(--mainColor);
     border: 2px solid var(--mainColor);
   }
 
-  &.text {
+  &.${variantClasses[ButtonComponent.Variant.Text]} {
     color: var(--mainColor);  
   }
 `

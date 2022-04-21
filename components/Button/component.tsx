@@ -1,27 +1,25 @@
 import combineClasses from '@utils/combineClasses'
-import { FC } from 'react'
-import { useTheme } from 'styled-components'
 
+import { variantClasses } from './constants'
 import Wrapper from './styles'
 import ButtonComponent from './types'
 
-const Button: FC<ButtonComponent.Props> = ({
-  variant = 'filled',
+const Button: ButtonComponent.MainComponent = ({
+  variant = ButtonComponent.Variant.Filled,
   className,
   ...restProps
 }) => {
-  const theme = useTheme()
-
-  const wrapperClasses = combineClasses(variant, className)
+  const wrapperClasses = combineClasses(variantClasses[variant], className)
 
   return (
     <Wrapper
       as='button'
       className={wrapperClasses}
-      palette={theme.palette.primary}
       {...restProps}
     />
   )
 }
+
+Button.variants = ButtonComponent.Variant
 
 export default Button

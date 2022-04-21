@@ -1,11 +1,15 @@
+import Element from '@components/Element/styles'
+import align from '@styles/mixins/align'
 import styled from 'styled-components'
 
-const Wrapper = styled.div`
+const Wrapper = styled(Element)`
   position: relative;
-  display: flex;
+  display: inline-flex;
   justify-content: space-between;
   align-items: center;
   min-height: 32px;
+
+  ${({ align: alignProp }) => align(alignProp)}
 
   .item {
     cursor: pointer;
@@ -21,8 +25,8 @@ const Wrapper = styled.div`
 
   .indicator {
     position: absolute;
-    height: 3px;
-    border-radius: 3px 3px 0 0;
+    height: 4px;
+    border-radius: 4px 4px 0 0;
     background-color: white;
     bottom: 0;
     left: 0;

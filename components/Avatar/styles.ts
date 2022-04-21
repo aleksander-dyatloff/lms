@@ -14,6 +14,7 @@ const Wrapper = styled(Element)<AvatarComponent.WrapperProps>`
   border-radius: 50%;
   object-fit: cover;
   object-position: center;
+  overflow: hidden;
   background-color: var(--contrastColor);
   color: var(--mainColor);
   user-select: none;

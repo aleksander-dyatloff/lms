@@ -64,6 +64,12 @@ TabList.Item = ({
     }
   }, [])
 
+  useEffect(() => {
+    if (selectedValue === value) {
+      setTabSizing(getTabItemSize())
+    }
+  }, [selectedValue, value])
+
   return (
     <button
       ref={ref}

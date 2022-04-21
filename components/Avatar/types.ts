@@ -1,5 +1,5 @@
 import Align from '@interfaces/Align'
-import { FC } from 'react'
+import { AllHTMLAttributes, FC } from 'react'
 
 import { AvatarSizes } from './constants'
 
@@ -8,7 +8,7 @@ export namespace AvatarComponent {
     size: number
   }
 
-  export interface Props {
+  export interface Props extends AllHTMLAttributes<HTMLElement> {
     align?: Align
     src?: string
     alt: string

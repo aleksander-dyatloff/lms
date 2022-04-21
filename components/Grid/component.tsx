@@ -11,9 +11,13 @@ const Grid: GridComponent.MainComponent = ({ ...restProps }) => (
 
 Grid.Column = ({
   size,
+  className,
   ...restProps
 }) => {
-  const wrapperClasses = combineClasses(size ? `col-${size}` : 'col')
+  const wrapperClasses = combineClasses(
+    size ? `col-${size}` : 'col',
+    className,
+  )
 
   return (
     <div

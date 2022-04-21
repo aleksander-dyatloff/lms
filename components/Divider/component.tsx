@@ -14,6 +14,7 @@ const Divider: FC<DividerComponent.Props> = ({
 
   return (
     <Wrapper
+      color={color}
       className={wrapperClasses}
       {...restProps}
     />

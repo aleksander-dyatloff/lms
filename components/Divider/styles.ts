@@ -5,15 +5,16 @@ const Wrapper = styled(Element)`
   background-color: ${({
     color, theme,
   }) => color ?? theme.palette.primary.contrast};
+  border-radius: 2px;
 
   &.vertical {
-    width: 2px;
+    width: 1.5px;
     height: 100px;
   }
 
   &.horizontal {
     width: 100%;
-    height: 2px;
+    height: 1.5px;
   }
 `
 

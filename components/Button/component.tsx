@@ -1,5 +1,6 @@
 import combineClasses from '@utils/combineClasses'
 
+import { variantClasses } from './constants'
 import Wrapper from './styles'
 import ButtonComponent from './types'
 
@@ -8,7 +9,7 @@ const Button: ButtonComponent.MainComponent = ({
   className,
   ...restProps
 }) => {
-  const wrapperClasses = combineClasses(String(variant), className)
+  const wrapperClasses = combineClasses(variantClasses[variant], className)
 
   return (
     <Wrapper

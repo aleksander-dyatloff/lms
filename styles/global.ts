@@ -6,7 +6,19 @@ const GlobalStyles = createGlobalStyle`
   }
 
   body {
-    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    font-family: 'Lato', sans-serif;
+    min-height: 100vh;
+  }
+
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  #__next {
+    height: 100%;
   }
 
   .reset {
@@ -20,7 +32,6 @@ const GlobalStyles = createGlobalStyle`
     background-color: transparent;
     border: none;
     border-radius: 0;
-    width: 100%;
     text-align: inherit;
     text-decoration: inherit;
     cursor: inherit;

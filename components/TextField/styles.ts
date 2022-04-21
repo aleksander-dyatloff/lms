@@ -7,13 +7,13 @@ const Wrapper = styled(Element)<TextFieldComponent.WrapperProps>`
   --mainColor: ${({ palette }) => palette.main};
   --contrastColor: ${({ palette }) => palette.contrast};
 
-  min-height: 36px;
-  min-width: 200px;
+  width: 100%;
+  height: 36px;
   position: relative;
   display: flex;
   align-items: center;
   border-radius: ${({ theme }) => theme.borderRadius * 3}px;
-  padding: ${({ theme }) => `${theme.spacing}px ${theme.spacing * 3}`}px;
+  padding: ${({ theme }) => `${theme.spacing}px 0`}px;
   transition-property: background-color, border-color, color;
   transition-duration: 160ms;
   color: var(--contrastColor);
@@ -22,16 +22,17 @@ const Wrapper = styled(Element)<TextFieldComponent.WrapperProps>`
     content: '';
     position: absolute;
     bottom: 2px;
-    left: ${({ theme }) => theme.spacing * 3}px;
-    right: ${({ theme }) => theme.spacing * 3}px;
-    height: 2px;
-    width: 100%;
-    background-color: white;
+    left: 0;
+    right: 0;
+    height: 1.5px;
+    border-radius: 2px;
+    background-color: var(--contrastColor);
     opacity: ${({ notEmpty }) => (notEmpty ? 1 : 0.7)};
   }
 
   .control {
     width: 100%;
+    min-width: 0px;
 
     &::placeholder {
       color: var(--contrastColor);
@@ -39,4 +40,12 @@ const Wrapper = styled(Element)<TextFieldComponent.WrapperProps>`
     }
   }
 `
+
+export const Error = styled.div`
+  margin-bottom: 8px;
+  margin-top: -8px;
+  color: ${({ palette }) => palette.error};
+  font-size: 0.7rem;
+`
+
 export default Wrapper

@@ -1,6 +1,7 @@
 import Element from '@components/Element/styles'
 import styled from 'styled-components'
 
+import { variantClasses } from './constants'
 import ButtonComponent from './types'
 
 const Wrapper = styled(Element)<ButtonComponent.WrapperProps>`
@@ -27,17 +28,17 @@ const Wrapper = styled(Element)<ButtonComponent.WrapperProps>`
   }) => palette?.mainDarken ?? theme.palette.primary.mainDarken};
   }
 
-  &.${ButtonComponent.Variant.Filled} {
+  &.${variantClasses[ButtonComponent.Variant.Filled]} {
     background-color: var(--mainColor);
     color: var(--contrastColor);
   }
 
-  &.${ButtonComponent.Variant.Outlined} {
+  &.${variantClasses[ButtonComponent.Variant.Outlined]} {
     color: var(--mainColor);
     border: 2px solid var(--mainColor);
   }
 
-  &.${ButtonComponent.Variant.Text} {
+  &.${variantClasses[ButtonComponent.Variant.Text]} {
     color: var(--mainColor);  
   }
 `

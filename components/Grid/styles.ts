@@ -9,12 +9,10 @@ const Wrapper = styled.div`
   width: 100%;
   display: flex;
   flex-wrap: wrap;
-  margin-left: - var(--gridSpacing);
-  margin-right: - var(--gridSpacing);
+  margin-left: calc(var(--gridSpacing) * -0.5);
+  margin-right: calc(var(--gridSpacing) * -0.5);
 
   & > * {
-    display: flex;
-    align-items: center;
     width: 100%;
     max-width: 100%;
     padding-left: var(--gridSpacing);

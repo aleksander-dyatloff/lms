@@ -1,6 +1,7 @@
+import Element from '@components/Element'
 import styled from 'styled-components'
 
-const Wrapper = styled.div`
+const Wrapper = styled(Element)`
   &.h1 {
     font-size: 2.2rem;
     font-weight: 600;
@@ -38,6 +39,15 @@ const Wrapper = styled.div`
   &.sub {
     font-size: 0.8rem;
     opacity: 0.7;
+  }
+
+  &.a {
+    color: ${({ theme }) => theme.palette.primary.main};
+
+    &:hover {
+      text-decoration: underline;
+      cursor: pointer;
+    }
   }
 `
 

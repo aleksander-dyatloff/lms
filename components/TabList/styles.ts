@@ -1,12 +1,15 @@
 import Element from '@components/Element/styles'
+import align from '@styles/mixins/align'
 import styled from 'styled-components'
 
 const Wrapper = styled(Element)`
   position: relative;
-  display: flex;
+  display: inline-flex;
   justify-content: space-between;
   align-items: center;
   min-height: 32px;
+
+  ${({ align: alignProp }) => align(alignProp)}
 
   .item {
     cursor: pointer;

@@ -1,5 +1,4 @@
-import { ColorPalette } from '@styles/theme/palette'
-import { FC } from 'react'
+import { AllHTMLAttributes, FC } from 'react'
 
 namespace ButtonComponent {
   export enum Variant {
@@ -7,8 +6,8 @@ namespace ButtonComponent {
     Outlined,
     Text,
   }
-  export interface WrapperProps {
-    palette?: ColorPalette
+  export interface WrapperProps extends AllHTMLAttributes<HTMLElement> {
+
   }
 
   export interface Props extends WrapperProps {

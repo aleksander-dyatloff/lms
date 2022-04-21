@@ -27,6 +27,4 @@ const Avatar: AvatarComponent.MainComponent = ({
   </Wrapper>
 )
 
-Avatar.size = AvatarSizes
-
 export default Avatar

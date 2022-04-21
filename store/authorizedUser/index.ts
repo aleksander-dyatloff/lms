@@ -47,7 +47,7 @@ const authorizedUserSlice = createSlice({
     })
 
     builder.addCase(loginUser.fulfilled, (state, { payload }) => {
-      localStorage.setItem('user-id', payload.id)
+      localStorage.setItem('user-id', payload.googleId)
 
       state.status = FetchStatus.Fulfilled
       state.info = payload

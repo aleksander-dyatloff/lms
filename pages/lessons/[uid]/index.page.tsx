@@ -1,6 +1,7 @@
 import LessonsAPI from '@api/lessons'
 import Avatar from '@components/Avatar'
 import Breadcrumbs from '@components/Breadcrumbs'
+import Button from '@components/Button'
 import Divider from '@components/Divider'
 import Grid from '@components/Grid'
 import Layout from '@components/Layout'
@@ -34,6 +35,20 @@ const Lessons: NextPage = () => {
     }
   }, [userId])
 
+  const handleDeleteLesson = () => {
+    if (!userId) return
+
+    void LessonsAPI.delete(userId, lesson?._id)
+      .then(() => router.push('/lessons'))
+  }
+
+  const handleLeaveLesson = () => {
+    if (!userId) return
+
+    void LessonsAPI.leave(userId, lesson?._id)
+      .then(() => router.push('/lessons'))
+  }
+
   return (
     <Layout>
       <Head>
@@ -61,9 +76,26 @@ const Lessons: NextPage = () => {
               >
                 {lesson?.name}
               </Text>
-              <Text>
+              <Text
+                as='div'
+                className='lessonDescription'
+              >
                 {lesson?.description}
               </Text>
+              <Grid>
+                <Grid.Column>
+                  <Button onClick={userId === lesson?.owner ? handleDeleteLesson : handleLeaveLesson}>
+                    {userId === lesson?.owner ? 'Delete' : 'Leave'}
+                  </Button>
+                </Grid.Column>
+                <Grid.Column>
+                  {userId === lesson?.owner && (
+                  <Button variant={Button.variants.Outlined}>
+                    Edit
+                  </Button>
+                  )}
+                </Grid.Column>
+              </Grid>
             </Grid.Column>
             <Grid.Column size={6}>
               <Text

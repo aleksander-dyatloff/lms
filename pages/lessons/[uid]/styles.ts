@@ -19,6 +19,10 @@ const Page = styled.div`
     margin-bottom: 8px;
   }
 
+  .lessonDescription {
+    margin-bottom: 16px;
+  }
+
   .activityTitle {
     text-align: center;
   }

@@ -12,6 +12,22 @@ const LessonsAPI = {
     return createdLesson
   },
 
+  async delete(ownerId: string, lessonId: string) {
+    const { data: deletedLesson } = await api.post<Lesson>('/lessons/delete', {
+      userId: ownerId, lessonId,
+    })
+
+    return deletedLesson
+  },
+
+  async leave(userId: string, lessonId: string) {
+    const { data: leavedLesson } = await api.post<Lesson>('/lessons/leave', {
+      userId, lessonId,
+    })
+
+    return leavedLesson
+  },
+
   async getUserLessons(userId: string) {
     const { data: lessons } = await api.post<Lesson[]>('/lessons/all', { userId })
 
@@ -32,12 +48,6 @@ const LessonsAPI = {
     const { data: lessonInfo } = await api.post<Lesson>(`/lessons/${lessonId}`, { userId })
 
     return lessonInfo
-  },
-
-  async delete(ownerId: string, lessonId: string) {
-    const { data: deletedLesson } = await api.post<Lesson>(`/lessons/${lessonId}`, { ownerId })
-
-    return deletedLesson
   },
 }
 

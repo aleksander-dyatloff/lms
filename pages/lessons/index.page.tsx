@@ -26,10 +26,12 @@ const Lessons: NextPage = () => {
   useEffect(() => {
     if (!userId) return
 
-    void LessonsAPI.getUserLessons(userId).then((fetchedLessons) => {
-      setLessons(fetchedLessons)
-    })
-  }, [])
+    if (typeof window !== undefined) {
+      void LessonsAPI.getUserLessons(userId).then((fetchedLessons) => {
+        setLessons(fetchedLessons)
+      })
+    }
+  }, [userId])
 
   return (
     <Layout>
